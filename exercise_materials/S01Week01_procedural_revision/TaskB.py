@@ -35,13 +35,16 @@ def find_index(name):
     for student in students:
         if student["name"] == name:
             return student
-    return None
+    return ""
   
 # Add mark to list
 def add_mark(student_dict, new_mark):
     student_dict["marks"].append(new_mark)
 
+# Run function to add mark
 add_mark(find_index(name), mark)
+
+#  Prints marks
 print(find_index(name)["marks"])
 
 
