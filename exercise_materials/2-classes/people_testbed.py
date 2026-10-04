@@ -49,6 +49,5 @@ if __name__ == "__main__":
         is_left=is_lefty
     )
 
-    
     print("------------------------------\n MY PERSON DETAILS: ")
     person_with_constructor.display_details()
