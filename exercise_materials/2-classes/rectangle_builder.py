@@ -1,4 +1,7 @@
+import math
+
 from shapes import Rectangle
+import random
 
 def find_greatest_area(rect_list):
     max_area = -1
@@ -31,16 +34,17 @@ if __name__ == "__main__":
 
     for i in range(5):
         # Create new default Rectangle
-        rect = Rectangle()
+        
         # Take in details for new Rectangle
         length = float(input(f"Enter length of rectangle {(i+1)}: "))
         width = float(input(f"Enter width of rectangle {(i + 1)}: "))
-        colour = input(f"Enter colour of rectangle {(i + 1)}: ")
 
-        # Update rectangle information to user's data
-        rect.length = length
-        rect.width = width
-        rect.colour = colour
+        # If number is odd, user can select colour, otherwise default colour is used
+        if random.randint(1,10) % 2 == 0:
+            colour = input(f"Enter colour of rectangle {(i + 1)}: ")
+            rect = Rectangle(length, width, colour)
+        else:
+            rect = Rectangle(length, width)        
 
         # Save rectangle in the list
         rectangles.append(rect)
