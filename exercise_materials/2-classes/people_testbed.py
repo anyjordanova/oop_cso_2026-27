@@ -1,5 +1,5 @@
 
-from people import Person, Employee
+from people import Person
 
 
 if __name__ == "__main__":
