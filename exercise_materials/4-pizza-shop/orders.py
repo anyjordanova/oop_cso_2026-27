@@ -19,15 +19,26 @@ class Pizza:
     def get_size(self):
         return self.__size
     
-
-
+    def set_size(self, new_size):
+        # Set correct text format
+        new_size = new_size.title()
+        # Validate if new size in the list
+        if new_size in Pizza.__sizes:
+            self.__size = new_size
+            return True
+        
+        return False
     
 if __name__  == "__main__":  
     pizza1 = Pizza(["pepperoni", "mushrooms"], "large")
     pizza1.display()
     print(pizza1.get_size())
-    
-    #this will raise a error
+    print(pizza1.set_size("small"))
+    print(pizza1.set_size("personal"))
+    print(pizza1.get_size())
+
+
+#this will raise a error
     try:
         pizza3 = Pizza(["bacon"], "Personal")
         pizza3.display()
