@@ -1,7 +1,10 @@
+from itertools import count
+
+
 class Pizza:
     # Static variable to hold valid sizes so it doesn't need to be redefined for each instance
     __sizes = ["Small", "Medium", "Large", "Extra-large"]
-    toppings = []
+    toppings = list
     
     def __init__(self, toppings: list, size:str="Medium"):    
         size = size.title()  # Normalize size input to title case
@@ -29,13 +32,17 @@ class Pizza:
         
         return False
     
+    def get_num_toppings(self):
+        return len(self.toppings)
+    
 if __name__  == "__main__":  
-    pizza1 = Pizza(["pepperoni", "mushrooms"], "large")
+    pizza1 = Pizza(["pepperoni", "green peppers","mushroom", "Olives", "Chives"], "large")
     pizza1.display()
     print(pizza1.get_size())
     print(pizza1.set_size("small"))
     print(pizza1.set_size("personal"))
     print(pizza1.get_size())
+    print(pizza1.get_num_toppings())
 
 
 #this will raise a error
