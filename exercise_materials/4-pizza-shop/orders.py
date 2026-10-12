@@ -16,14 +16,16 @@ class Pizza:
     def display(self):
          print(f"{self.__size}_Pizza with {', '.join(self.toppings)} toppings")
 
-
-
+    def get_size(self):
+        return self.__size
+    
 
 
     
 if __name__  == "__main__":  
     pizza1 = Pizza(["pepperoni", "mushrooms"], "large")
     pizza1.display()
+    print(pizza1.get_size())
     
     #this will raise a error
     try:
