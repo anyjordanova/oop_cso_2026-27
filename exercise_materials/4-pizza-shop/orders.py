@@ -54,6 +54,17 @@ class Pizza:
             return True
         else:
             raise ValueError(f"Invalid topping: {new_topping}. Valid toppings are: {Pizza.toppings + Pizza.premium_toppings}")
+        
+    def remove_topping(self, to_be_removed):
+        # Correct format
+        to_be_removed = to_be_removed.title()
+        
+        if to_be_removed in self.toppings:
+            self.toppings.remove(to_be_removed)
+            return True
+        else:
+            return False
+        
 if __name__  == "__main__":  
     pizza1 = Pizza(["pepperoni", "green peppers","mushroom", "Olives", "Chives"], "large")
     pizza1.display()
@@ -63,6 +74,8 @@ if __name__  == "__main__":
     print(pizza1.get_size())
     print(pizza1.get_num_toppings())
     print(pizza1.add_topping("goat cheese"))
+    print(pizza1.remove_topping("pepperoni"))
+    pizza1.display()
 
 
 #this will raise a error
